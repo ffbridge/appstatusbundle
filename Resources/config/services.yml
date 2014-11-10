@@ -1,0 +1,7 @@
+parameters:
+#    kilix_app_status.example.class: Kilix\AppStatusBundle\Example
+
+services:
+#    kilix_app_status.example:
+#        class: %kilix_app_status.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
