@@ -1,0 +1,22 @@
+{
+    "name": "kilix/appstatusbundle",
+    "type": "symfony-bundle",
+    "description": "Bundle to generate app status response",
+    "keywords": ["probe", "status", "app status", "app working"],
+    "license": "Apache-v2",
+    "authors": [
+        {
+            "name": "Alexandre BODIN",
+            "email": "bodin.alex@gmail.com",
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "AppStatusBundle": ""
+        }
+    },
+    "target-dir": "AppStatusBundle"
+}
