@@ -1,3 +1,3 @@
-kilix_app_status_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: KilixAppStatusBundle:Default:index }
+kilix_app_status_page:
+    path:     /app_status/{attribute}
+    defaults: { _controller: KilixAppStatusBundle:AppStatus:status , attribute: all}

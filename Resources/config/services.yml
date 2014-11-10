@@ -1,7 +1,6 @@
 parameters:
-#    kilix_app_status.example.class: Kilix\AppStatusBundle\Example
+    kilix_app_status.status_collector.class: Kilix\AppStatusBundle\Service\StatusCollectorService
 
 services:
-#    kilix_app_status.example:
-#        class: %kilix_app_status.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    kilix_app_status.status_collector:
+        class: %kilix_app_status.status_collector.class%
