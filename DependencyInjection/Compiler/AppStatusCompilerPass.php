@@ -10,7 +10,7 @@ class AppStatusCompilerPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if (!$container->hasDefinition('acme_mailer.transport_chain')) {
+        if (!$container->hasDefinition('kilix_app_status.status_collector')) {
             return;
         }
 
