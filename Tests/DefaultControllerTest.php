@@ -7,7 +7,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class DefaultControllerTest extends WebTestCase
 {
-    public function testHomepage()
+    public function testGetAllStatus()
     {
         $client = $this->createClient();
         $router = self::$kernel->getContainer()->get('router');
@@ -16,8 +16,6 @@ class DefaultControllerTest extends WebTestCase
         $client->request('GET', $route);
         $response = $client->getResponse();
         $content = json_decode($response->getContent(),true);
-        
-        print_r($content);
 
         $this->assertEquals(200, $response->getStatusCode());
     }
@@ -25,7 +23,7 @@ class DefaultControllerTest extends WebTestCase
     protected function setUp()
     {
         $fs = new Filesystem();
-        //$fs->remove(sys_get_temp_dir().'/LilaConceptsBestPracticeBundle/');
+        $fs->remove(sys_get_temp_dir().'/KilixAppStatusBundleTestsTestBundle/');
     }
 
     protected static function createKernel(array $options = array())
