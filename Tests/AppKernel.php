@@ -30,7 +30,6 @@ class AppKernel extends Kernel
     {
         return array(
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Symfony\Bundle\TwigBundle\TwigBundle(),
             new \Kilix\AppStatusBundle\KilixAppStatusBundle(),
             new \Kilix\AppStatusBundle\Tests\TestBundle\TestBundle(),
         );
@@ -43,6 +42,6 @@ class AppKernel extends Kernel
 
     public function getCacheDir()
     {
-        return sys_get_temp_dir().'/LilaConceptsBestPracticeBundle';
+        return sys_get_temp_dir().'/KilixAppStatusBundleTestsTestBundle';
     }
 }

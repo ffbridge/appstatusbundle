@@ -22,6 +22,8 @@ class AppStatusCompilerPass implements CompilerPassInterface
             'kilix_app_status.status'
         );
 
+print_r($taggedServices);
+
         foreach ($taggedServices as $id => $attributes) {
             $definition->addMethodCall(
                 'addStatus',

@@ -1,7 +1,6 @@
 <?php
 
-namespace Kilix\AppStatusBundle\Interface;
-
+namespace Kilix\AppStatusBundle\Status;
 
 interface StatusInterface
 {

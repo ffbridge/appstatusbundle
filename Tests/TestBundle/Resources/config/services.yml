@@ -1,0 +1,5 @@
+services:
+    kilix_app_status.status_hello_world:
+        class: Kilix\AppStatusBundle\Tests\TestBundle\Service\HelloStatus
+        tags: 
+            - { name: kilix_app_status.status }
