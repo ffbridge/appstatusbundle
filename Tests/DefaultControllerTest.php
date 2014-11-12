@@ -17,6 +17,8 @@ class DefaultControllerTest extends WebTestCase
         $response = $client->getResponse();
         $content = json_decode($response->getContent(),true);
 
+        print_r($content);
+
         $this->assertEquals(200, $response->getStatusCode());
     }
 

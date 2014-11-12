@@ -9,12 +9,16 @@ class HelloStatus implements StatusInterface
 
     public function getStatus()
     {
-        return "OK";
+        /**
+         * my tests ...
+         */
+
+        return true;
     }   
 
     public function getName()
     {
-        return 'HelloWorld';
+        return 'test_DBHellowWorld Truc_Mcuh_azdazdAazdioanz_AZazdaz_AZDAZ_ADADazidnoa_AZHelapozd azdazopAZDazdp';
     }
 
 }

@@ -24,14 +24,15 @@ class StatusCollectorService
         foreach ($this->statuses as $status) 
         {
             $statusName = str_replace(" ", "", $status->getName());
-            $statusName = preg_replace_callback(
-                '([A-Z][a-z]+[^A-Z\s]*)', 
-                function($match) {
-                    return "_" . strtolower($match[0]);
+            preg_match_all('/([A-Z](?=[a-z])[^A-Z\s_]*)|([A-Z]+(?![a-z]))|([a-z]+)/', $statusName, $matches);
+            $statusName = '';
+            foreach ($matches[0] as $index => $match) {
+                if($index > 0) {
+                    $statusName .= '_';
                 }
-                , $statusName);
-            $statusName = trim($statusName,'_');
-
+                $statusName .= strtolower(trim($match,'_'));
+            }
+            
             $data[$statusName] = $status->getStatus();
         }
 
