@@ -18,7 +18,7 @@ class HelloStatus implements StatusInterface
 
     public function getName()
     {
-        return 'test_DBHellowWorld Truc_Mcuh_azdazdAazdioanz_AZazdaz_AZDAZ_ADADazidnoa_AZHelapozd azdazopAZDazdp';
+        return 'test_db';
     }
 
 }

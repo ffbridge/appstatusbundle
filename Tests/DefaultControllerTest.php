@@ -13,11 +13,9 @@ class DefaultControllerTest extends WebTestCase
         $router = self::$kernel->getContainer()->get('router');
         $route = $router->generate('kilix_app_status_page');
 
-        $client->request('GET', $route);
+        $client->request('GET', $route.'/test_db');
         $response = $client->getResponse();
         $content = json_decode($response->getContent(),true);
-
-        print_r($content);
 
         $this->assertEquals(200, $response->getStatusCode());
     }
