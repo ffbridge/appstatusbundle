@@ -53,3 +53,44 @@ kilix_app_status:
     resource: "@KilixAppStatusBundle/Resources/config/routing.yml"
     prefix:   /
 ```
+
+### Step 2: Using the bundle
+=========================================
+
+#### - Creating Statuses
+
+Create a service as follows. The service needs to implement the `Kilix\AppStatusBundle\Status\StatusInterface` **interface**
+
+```php
+<?php
+//...
+use Kilix\AppStatusBundle\Status\StatusInterface;
+
+class YourStatusService implements StatusInterface
+{
+    // return boolean if the app element you are testing is ok or not
+    public function getStatus()
+    {
+        //... your tests 
+        return true; 
+    }
+    
+    //return the name of the app element you are testing
+    public function getName()
+    {
+        return 'YourStatus'; 
+    }
+}
+```
+
+Declare your service as follows 
+
+```yml
+services:
+    your_status_service:
+        class: Company\Bundle\Service\YourStatusService
+        tags:
+            - { name: kilix_app_status.status }
+```
+Finally access your app using the url `/app_status/{status_name}` where `status_name` is optional.
+
