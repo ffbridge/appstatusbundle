@@ -1,10 +1,10 @@
-#AppStatusBundle
+# AppStatusBundle
 
 Symfony2 bundle for simple app supervision
 
-##Installation 
+## Installation 
 
-###Step 1: Setting up the bundle
+### Step 1: Setting up the bundle
 ========================================
 
 - ### Install AppStatsBundle
