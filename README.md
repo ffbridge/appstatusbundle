@@ -9,6 +9,19 @@ Symfony2 bundle for simple app supervision
 
 #### - Install AppStatsBundle
 
+First add kilix composer repository to your composer.json
+
+```json
+
+"repositories": [
+        {
+            "type": "composer",
+            "url": "http://composer.kilix.net"
+        }
+    ]
+
+```
+
 Simply run assuming you have installed composer.phar or composer binary:
 
 ``` bash
