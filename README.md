@@ -7,7 +7,7 @@ Symfony2 bundle for simple app supervision
 ### Step 1: Setting up the bundle
 ========================================
 
-- ### Install AppStatsBundle
+- ###Install AppStatsBundle
 
 Simply run assuming you have installed composer.phar or composer binary:
 
@@ -15,7 +15,7 @@ Simply run assuming you have installed composer.phar or composer binary:
 $ php composer.phar require kilix/appstatusbundle dev-master
 ```
 
-- ### Enable the bundle
+- ###Enable the bundle
 
 Enable the bundle in the kernel:
 
