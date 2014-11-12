@@ -1,5 +1,11 @@
 services:
-    kilix_app_status.status_hello_world:
-        class: Kilix\AppStatusBundle\Tests\TestBundle\Service\HelloStatus
+    kilix_app_status.status_passing:
+        class: Kilix\AppStatusBundle\Tests\TestBundle\Service\TestPassingStatus
         tags: 
             - { name: kilix_app_status.status }
+
+    kilix_app_status.status_failing:
+        class: Kilix\AppStatusBundle\Tests\TestBundle\Service\TestFailingStatus
+        tags: 
+            - { name: kilix_app_status.status }
+

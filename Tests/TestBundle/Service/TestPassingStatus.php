@@ -4,7 +4,7 @@ namespace Kilix\AppStatusBundle\Tests\TestBundle\Service;
 
 use Kilix\AppStatusBundle\Status\StatusInterface;
 
-class HelloStatus implements StatusInterface
+class TestPassingStatus implements StatusInterface
 {
 
     public function getStatus()
@@ -18,7 +18,7 @@ class HelloStatus implements StatusInterface
 
     public function getName()
     {
-        return 'test_db';
+        return 'test_passing';
     }
 
 }

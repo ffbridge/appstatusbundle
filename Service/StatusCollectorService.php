@@ -12,6 +12,8 @@ class StatusCollectorService
     const STATUS_OK = 0;
     const STATUS_KO = 1;
     const STATUS_NOT_FOUND = 2;
+    const KEYWORD_KO = 'KO';
+    const KEYWORD_OK = 'OK';
 
     public function __construct()
     {
@@ -32,37 +34,47 @@ class StatusCollectorService
         $this->statuses[$statusName] = $status;
     }
 
-    public function collectStatuses($attribute = null) 
+    public function collectStatuses($attribute = 'all') 
     {
-        if(!empty($attribute) && is_string($attribute)) {
+
+        if($attribute != 'all' && !empty($attribute) && is_string($attribute)) {
             if(isset($this->statuses[$attribute])) {
                 $state = $this->statuses[$attribute]->getStatus();
+                $state = $this->getKeywordStatus($state);
+
                 return array(
-                        'status' => ($state) ? self::STATUS_OK : self::STATUS_KO, 
+                        'status' => ($state == self::KEYWORD_OK) ? self::STATUS_OK : self::STATUS_KO, 
                         'data' => array(
                             $attribute => $state
                         )
                     );
+            } else {
+                return array('status' => self::STATUS_NOT_FOUND);
             }
-        } else {
-            return array('status' => self::STATUS_NOT_FOUND);
         }
 
-        $appStatus = self::STATUS_OK;
+        $appState = self::STATUS_OK;
         $data = array();
         foreach ($this->statuses as $statusName => $status) 
-        {   
-            print_r($status);
+        {
             $state = $status->getStatus();
-            if(!$state) {
-                $appStatus = self::STATUS_KO;
+            $state = $this->getKeywordStatus($state);
+
+            if($state == self::KEYWORD_KO) {
+                $appState = self::STATUS_KO;
             }
+
             $data[$statusName] = $state;
         }
 
         return array(
-            'status' => $appStatus,
+            'status' => $appState,
             'data' => $data
         );
+    }
+
+    protected function getKeywordStatus($state)
+    {
+        return ($state) ? self::KEYWORD_OK : self::KEYWORD_KO;
     }
 }

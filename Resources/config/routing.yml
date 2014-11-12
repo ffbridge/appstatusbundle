@@ -1,3 +1,3 @@
 kilix_app_status_page:
     path:     /app_status/{attribute}
-    defaults: { _controller: KilixAppStatusBundle:AppStatus:status , attribute: all}
+    defaults: { _controller: KilixAppStatusBundle:AppStatus:status, attribute: all}

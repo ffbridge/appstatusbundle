@@ -12,8 +12,7 @@ class AppStatusController extends Controller
     {
         $response = new JsonResponse();
         $data = $this->get('kilix_app_status.status_collector')->collectStatuses($attribute);
-        print_r($data);
-    
+
         if ($data['status'] == StatusCollectorService::STATUS_NOT_FOUND) {
             return $response->setStatusCode(404)
                             ->setData('status not found');
@@ -22,8 +21,8 @@ class AppStatusController extends Controller
             return $response->setStatusCode(409)
                             ->setData($data['data']);
 
-        } else if ($data['status'] == StatusCollectorService::STATUS_OK) {
-            return $response->setData($data['data']);
         }
+
+        return $response->setData($data['data']);
     }
 }
