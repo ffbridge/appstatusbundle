@@ -25,7 +25,7 @@ First add kilix composer repository to your composer.json
 Simply run assuming you have installed composer.phar or composer binary:
 
 ``` bash
-$ php composer.phar require kilix/appstatusbundle dev-master
+$ php composer.phar require kilix/appstatusbundle dev-develop
 ```
 
 #### - Enable the bundle
