@@ -3,4 +3,4 @@ parameters:
 
 services:
     kilix_app_status.status_collector:
-        class: %kilix_app_status.status_collector.class%
+        class: "%kilix_app_status.status_collector.class%"
