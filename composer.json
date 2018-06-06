@@ -1,5 +1,5 @@
 {
-    "name": "kilix/appstatusbundle",
+    "name": "ffbridge/appstatusbundle",
     "type": "symfony-bundle",
     "description": "Bundle to generate app status response",
     "keywords": ["probe", "status", "app status", "app working"],
@@ -18,5 +18,5 @@
             "Kilix\\AppStatusBundle": ""
         }
     },
-    "target-dir": "Kilix/AppStatusBundle"
+    "target-dir": "ffbridge/AppStatusBundle"
 }
